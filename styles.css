@@ -1,0 +1,46 @@
+.vault-stats { padding: 20px 28px; }
+
+.vault-stats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vault-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 12px 0 24px;
+}
+
+.vault-stats-card {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  padding: 14px;
+  text-align: center;
+}
+
+.vault-stats-value {
+  font-size: var(--font-ui-larger);
+  font-weight: var(--font-bold);
+  color: var(--text-accent);
+}
+
+.vault-stats-label {
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+}
+
+.vault-stats table { width: 100%; max-width: 480px; }
+.vault-stats th, .vault-stats td { text-align: left; padding: 4px 8px; }
+
+.vault-stats-list { list-style: none; padding: 0; max-width: 600px; }
+.vault-stats-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 3px 0;
+}
+.vault-stats-list a { cursor: pointer; }
+.vault-stats-muted, .vault-stats-footnote { color: var(--text-muted); }

@@ -1,0 +1,9 @@
+{
+  "id": "vault-stats",
+  "name": "Vault Stats",
+  "version": "0.1.0",
+  "minAppVersion": "1.0.0",
+  "description": "Shows vault statistics in a custom view, opened from the ribbon.",
+  "author": "You",
+  "isDesktopOnly": false
+}
