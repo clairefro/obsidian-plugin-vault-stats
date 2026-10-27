@@ -1,10 +1,6 @@
 .vault-stats { padding: 20px 28px; }
 
-.vault-stats-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+.vault-stats-header { display: flex; align-items: center; justify-content: space-between; }
 
 .vault-stats-grid {
   display: grid;
@@ -20,27 +16,57 @@
   padding: 14px;
   text-align: center;
 }
+.vault-stats-value { font-size: var(--font-ui-larger); font-weight: var(--font-bold); color: var(--text-accent); }
+.vault-stats-label { font-size: var(--font-ui-small); color: var(--text-muted); }
 
-.vault-stats-value {
-  font-size: var(--font-ui-larger);
-  font-weight: var(--font-bold);
-  color: var(--text-accent);
+.vault-stats-breakdown {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.vault-stats-label {
-  font-size: var(--font-ui-small);
-  color: var(--text-muted);
+.vault-stats-breakdown-panel { min-width: 0; }
+
+/* Pele pie chart: map Pele's theme variables to Obsidian's */
+.vault-stats-pie {
+  max-width: 560px;
+  --pele-bg: transparent;
+  --pele-fg: var(--text-normal);
+  --pele-muted: var(--text-muted);
+  --pele-line: var(--text-faint);
+  --pele-surface: var(--background-secondary);
+  --pele-surface-alt: var(--background-modifier-hover);
+  --pele-border: var(--background-modifier-border);
+  --pele-accent: var(--interactive-accent);
+  --pele-font: var(--font-interface);
+  --pele-radius: var(--radius-s);
 }
 
-.vault-stats table { width: 100%; max-width: 480px; }
+.vault-stats table { width: 100%; }
 .vault-stats th, .vault-stats td { text-align: left; padding: 4px 8px; }
+.vault-stats-ext-table { max-width: 480px; }
 
-.vault-stats-list { list-style: none; padding: 0; max-width: 600px; }
-.vault-stats-list li {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 3px 0;
+.vault-stats-clickable { cursor: pointer; }
+.vault-stats-clickable:hover { background: var(--background-modifier-hover); }
+
+.vault-stats-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.vault-stats-controls input[type="search"] { flex: 1 1 200px; }
+
+.vault-stats-files { margin-top: 8px; }
+.vault-stats-name { word-break: break-all; }
+.vault-stats-name a { cursor: pointer; }
+.vault-stats-size { min-width: 90px; white-space: nowrap; }
+.vault-stats-bar {
+  height: 4px;
+  margin-top: 2px;
+  border-radius: 2px;
+  background: var(--interactive-accent);
+  opacity: 0.7;
 }
-.vault-stats-list a { cursor: pointer; }
+
 .vault-stats-muted, .vault-stats-footnote { color: var(--text-muted); }
+.vault-stats-footnote { margin-top: 24px; }
+
+@media (max-width: 700px) {
+  .vault-stats-breakdown { grid-template-columns: 1fr; }
+}

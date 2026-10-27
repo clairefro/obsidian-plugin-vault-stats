@@ -11,9 +11,12 @@
   "devDependencies": {
     "@types/node": "^20.0.0",
     "builtin-modules": "^3.3.0",
-    "esbuild": "^0.21.0",
+    "esbuild": "^0.28.2",
     "obsidian": "latest",
     "tslib": "^2.6.0",
     "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "pele": "^1.12.0"
   }
 }

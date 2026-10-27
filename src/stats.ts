@@ -16,8 +16,6 @@ export interface VaultStats {
   links: number;
   unresolvedLinks: number;
   tagCount: number;
-  largest: TFile[];
-  recent: TFile[];
   oldestNote: TFile | null;
 }
 
@@ -66,8 +64,6 @@ export async function collectStats(app: App): Promise<VaultStats> {
     if (cache) getAllTags(cache)?.forEach((t) => tags.add(t));
   }
 
-  const largest = [...files].sort((a, b) => b.stat.size - a.stat.size).slice(0, 5);
-  const recent = [...files].sort((a, b) => b.stat.mtime - a.stat.mtime).slice(0, 5);
   const oldestNote = notes.length
     ? [...notes].sort((a, b) => a.stat.ctime - b.stat.ctime)[0]
     : null;
@@ -82,8 +78,6 @@ export async function collectStats(app: App): Promise<VaultStats> {
     links,
     unresolvedLinks,
     tagCount: tags.size,
-    largest,
-    recent,
     oldestNote,
   };
 }
